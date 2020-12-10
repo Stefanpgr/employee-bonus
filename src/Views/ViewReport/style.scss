@@ -52,7 +52,11 @@ box-shadow: 0 0 1.25rem rgba(31,45,61,.05);
     margin-bottom: 1rem;
 }
 
-
+.details-card_titleWrp{
+    display: flex;
+    justify-content: space-between ;
+  
+}
 .details-card_title{
     color: tomato;
     margin-bottom: 2rem;

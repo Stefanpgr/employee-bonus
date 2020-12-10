@@ -1,18 +1,17 @@
-import moment  from 'moment';
+import moment from 'moment';
 import { format } from '../../helper/formatter';
 import './style.scss';
 
 const ViewReport = ({ location: { state } }) => {
-const formatTime = (time) => {
- const t = moment(time, "HH:mm").format('LT')
+  const formatTime = (time) => {
+    const t = moment(time, 'HH:mm').format('LT');
 
- return t
-}
+    return t;
+  };
 
   return (
     <div>
       <div className="report-body">
-    
         {/* <div className='report-body_wrapper'> */}
         <h1>Report</h1>
         <div className="details-card">
@@ -24,19 +23,21 @@ const formatTime = (time) => {
                 className=" rounded-circle header-img"
                 width="120"
               />
-              <h5 className='employee-name'>{state.name}</h5>
+              <h5 className="employee-name">{state.name}</h5>
             </div>
-<div>
-<h6>
-              Total Bonus:
-            </h6>
-            <h6 className='tbonus'>{format(state.bonus * 50)}</h6>
-</div>
-            
+            <div>
+              <h6>Total Bonus:</h6>
+              <h6 className="tbonus">{format(state.bonus * 50)}</h6>
+            </div>
           </div>
         </div>
         <div className="details-card">
-          <h5 className="details-card_title">Time Arrived</h5>
+          <div className="details-card_titleWrp">
+            <h5 className="details-card_title">Day</h5>
+
+            <h5 className="details-card_title">Time Arrived</h5>
+          </div>
+
           <div className="details-card_time">
             <p>Monday:</p> <p>{formatTime(state.timeArrived.monday)}</p>
           </div>
