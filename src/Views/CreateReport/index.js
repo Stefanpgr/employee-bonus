@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Button, Card, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import {  useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { ADD_GENERATED_REPORT, ADD_REPORT } from '../../actions';
 import { getRandomImg } from '../../api/randomImg';
-import EmployeeCards from '../../components/EmployeeCards';
+import ReportCard from '../../components/ReportCard';
 import { calculateBonus } from '../../helper/calculateBonus';
 import './style.scss';
 
@@ -58,140 +57,125 @@ const CreateReport = () => {
   };
 
   return (
-    <Container>
-      <Card>
-        <Card.Body>
-          <form className="form" onSubmit={handleSubmit}>
-            <Row>
-              <div className="col-md-12">
-                <label htmlFor="text-input">Name</label> <br />
-                <input
-                  className="input"
-                  value={name}
-                  required
-                  name="name"
-                  id="text-input"
-                  type="text"
-                  onChange={({ target }) => setName(target.value)}
-                />
-              </div>
+    <div className="form-wrapper">
+     
 
-              <div className="col-md-4">
-                <label htmlFor="text-input">Monday</label> <br />
-                <input
-                  name="monday"
-                  value={timeArrived.monday}
-                  required
-                  className="input"
-                  id="text-input"
-                  type="time"
-                  onChange={handleTime}
-                />
-              </div>
+     
+      <div className="form-body">
 
-              <div className="col-md-4">
-                <label htmlFor="text-input">Tuesday</label> <br />
-                <input
-                  required
-                  name="tuesday"
-                  value={timeArrived.tuesday}
-                  className="input"
-                  id="text-input"
-                  type="time"
-                  onChange={handleTime}
-                />
-              </div>
+        <div className='wrapper'>
+        <form
+          className="card-container card-container_form"
+          onSubmit={handleSubmit}
+        >
+          <div className="">
+            <label htmlFor="text-input">Name</label> <br />
+            <input
+              className="input"
+              value={name}
+              required
+              name="name"
+              id="text-input"
+              type="text"
+              onChange={({ target }) => setName(target.value)}
+            />
+          </div>
 
-              <div className="col-md-4">
-                <label htmlFor="text-input">Wednesday</label> <br />
-                <input
-                  required
-                  name="wednesday"
-                  value={timeArrived.wednesday}
-                  className="input"
-                  id="text-input"
-                  type="time"
-                  onChange={handleTime}
-                />
-              </div>
+          <div className="">
+            <label htmlFor="text-input">Monday</label> <br />
+            <input
+              name="monday"
+              value={timeArrived.monday}
+              required
+              className="input"
+              id="text-input"
+              type="time"
+              onChange={handleTime}
+            />
+          </div>
 
-              <div className="col-md-4">
-                <label htmlFor="text-input">Thursday</label> <br />
-                <input
-                  required
-                  name="thursday"
-                  className="input"
-                  id="text-input"
-                  type="time"
-                  onChange={handleTime}
-                  value={timeArrived.thursday}
-                />
-              </div>
+          <div className="">
+            <label htmlFor="text-input">Tuesday</label> <br />
+            <input
+              required
+              name="tuesday"
+              value={timeArrived.tuesday}
+              className="input"
+              id="text-input"
+              type="time"
+              onChange={handleTime}
+            />
+          </div>
 
-              <div className="col-md-4">
-                <label htmlFor="text-input">Friday</label> <br />
-                <input
-                  required
-                  className="input"
-                  name="friday"
-                  id="text-input"
-                  type="time"
-                  onChange={handleTime}
-                  value={timeArrived.friday}
-                />
-              </div>
-            </Row>
+          <div className="">
+            <label htmlFor="text-input">Wednesday</label> <br />
+            <input
+              required
+              name="wednesday"
+              value={timeArrived.wednesday}
+              className="input"
+              id="text-input"
+              type="time"
+              onChange={handleTime}
+            />
+          </div>
 
-            <Button type="submit" disabled={reports.length === 5 ? true:false}>Add</Button>
-          </form>
-        </Card.Body>
-      </Card>
-      <Row>
-        {reports.map((el, i) => (
-          <EmployeeCards
-            key={i}
-            name={el.name}
-            imgUrl={el.picture.medium}
-            timeArrived={el.timeArrived}
-          />
-        ))}
-      </Row>
+          <div className="">
+            <label htmlFor="text-input">Thursday</label> <br />
+            <input
+              required
+              name="thursday"
+              className="input"
+              id="text-input"
+              type="time"
+              onChange={handleTime}
+              value={timeArrived.thursday}
+            />
+          </div>
 
-      {reports.length > 0 && (
-        // <Link to='/reports' >
-        <Button onClick={handleGenerate} disabled={reports.length === 5 ? false:true}>Generate Report</Button>
-        // </Link>
-      )}
-      {/* <form className='form'>
-                <div className='grid-item'>
-                <label htmlFor="text-input">Name</label> <br />
-<input className="input" id="text-input" type="text" />
-                </div>
-                <div className='flex-row'>
-                <div className='grid-item'>
-<label htmlFor="text-input">Monday</label> <br />
-<input className="input" id="text-input" type="time" />
-</div>
-<div className='grid-item'>
-<label htmlFor="text-input">Tuesday</label> <br />
-<input className="input" id="text-input" type="time" />
-</div>
-<div className='grid-item'>
-<label htmlFor="text-input">Wednesday</label> <br />
-<input className="input" id="text-input" type="time" />
-</div>
-<div className='grid-item'>
-<label htmlFor="text-input">Thursday</label> <br />
-<input className="input" id="text-input" type="time" />
-</div>
-<div className='grid-item'>
-<label htmlFor="text-input">Friday</label> <br />
-<input className="input" id="text-input" type="time" />
-</div>
-                </div>
-                
-            </form> */}
-    </Container>
+          <div className="">
+            <label htmlFor="text-input">Friday</label> <br />
+            <input
+              required
+              className="input"
+              name="friday"
+              id="text-input"
+              type="time"
+              onChange={handleTime}
+              value={timeArrived.friday}
+            />
+          </div>
+
+          <button className='button' type="submit" disabled={reports.length === 5 ? true : false}>
+            Add
+          </button>
+        </form>
+        </div>
+        <div className="wrapper">
+          <div className="cards-wrapper_grid">
+            {reports.map((el, i) => (
+              <ReportCard
+                key={i}
+                name={el.name}
+                imgUrl={el.picture.medium}
+                timeArrived={el.timeArrived}
+              />
+            ))}
+            {reports.length > 0 && (
+     
+              <button
+              className={`button`}
+                onClick={handleGenerate}
+                disabled={reports.length === 5 ? false : true}
+              >
+                Generate Report
+              </button>
+            
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

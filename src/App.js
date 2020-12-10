@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CreateReport from './Views/CreateReport';
 import Report from "./Views/Report";
-import './App.scss';
+import './App.css';
 import ViewReport from "./Views/ViewReport";
 
 function App() {

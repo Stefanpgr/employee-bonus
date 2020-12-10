@@ -1,22 +1,26 @@
-const { Card } = require("react-bootstrap")
+
 
 
 
 const EmployeeCards = ({imgUrl, timeArrived, name}) => {
 
     return(
-        <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={imgUrl} />
-        <Card.Body>
-    <Card.Title>{name}</Card.Title>
-          <Card.Text>
+      <div className='employee-cards_wrapper'>
+
+      
+        <div className='card-container' >
+        <img  src={imgUrl}  style={{width: '10rem'}} />
+        <div>
+    <h5>{name}</h5>
+          <p>
        
             Mon:{timeArrived.monday}, Tue: {timeArrived.tuesday}, Wed: {timeArrived.wednesday}, Thurs: {timeArrived.thursday}, Friday: {timeArrived.friday}
        
-          </Card.Text>
+          </p>
           {/* <Button variant="primary">Go somewhere</Button> */}
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
+      </div>
     )
 }
 

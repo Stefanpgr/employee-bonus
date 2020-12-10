@@ -10,7 +10,7 @@ const ReportCard = ({ name, imgUrl, bonus }) => {
             <img
               src={imgUrl}
               alt={name}
-              className="mr-2 rounded-circle"
+              className=" rounded-circle"
               width="50"
             />
             <div >
@@ -19,7 +19,7 @@ const ReportCard = ({ name, imgUrl, bonus }) => {
             </div>
           </div>
           <div className="bonus">
-            {format(bonus * 50)} <span>bonus</span>
+            {bonus && format(bonus * 50)} {bonus && (<span>bonus</span>)}
           </div>
         </div>
       </div>

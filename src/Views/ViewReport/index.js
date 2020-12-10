@@ -1,10 +1,18 @@
+import moment  from 'moment';
 import { format } from '../../helper/formatter';
 import './style.scss';
 
 const ViewReport = ({ location: { state } }) => {
+const formatTime = (time) => {
+ const t = moment(time, "HH:mm").format('LT')
+
+ return t
+}
+
   return (
     <div>
       <div className="report-body">
+    
         {/* <div className='report-body_wrapper'> */}
         <h1>Report</h1>
         <div className="details-card">
@@ -30,19 +38,19 @@ const ViewReport = ({ location: { state } }) => {
         <div className="details-card">
           <h5 className="details-card_title">Time Arrived</h5>
           <div className="details-card_time">
-            <p>Monday:</p> <p>{state.timeArrived.monday}</p>
+            <p>Monday:</p> <p>{formatTime(state.timeArrived.monday)}</p>
           </div>
           <div className="details-card_time">
-            <p>Tuesday:</p> <p>{state.timeArrived.tuesday}</p>
+            <p>Tuesday:</p> <p>{formatTime(state.timeArrived.tuesday)}</p>
           </div>
           <div className="details-card_time">
-            <p>Wednesday:</p> <p>{state.timeArrived.wednesday}</p>
+            <p>Wednesday:</p> <p>{formatTime(state.timeArrived.wednesday)}</p>
           </div>
           <div className="details-card_time">
-            <p>Thursday:</p> <p>{state.timeArrived.thursday}</p>
+            <p>Thursday:</p> <p>{formatTime(state.timeArrived.thursday)}</p>
           </div>
           <div className="details-card_time">
-            <p>Friday:</p> <p>{state.timeArrived.friday}</p>
+            <p>Friday:</p> <p>{formatTime(state.timeArrived.friday)}</p>
           </div>
         </div>
         {/* </div> */}
