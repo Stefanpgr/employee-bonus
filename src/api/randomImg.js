@@ -5,6 +5,7 @@ export const getRandomImg = async () => {
         })
         return res.json()
     } catch (error) {
+        // return
         console.log(error)
     }
 }

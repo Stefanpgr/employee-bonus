@@ -27,24 +27,29 @@ const CreateReport = () => {
     e.preventDefault();
   
     const res = await getRandomImg();
-    const employee = {
-      name,
-      timeArrived,
-      picture: res.results[0].picture,
-    };
-   
-    dispatch({
-      type: ADD_REPORT,
-      payload: employee,
-    });
-    setTimeArrived({
-      monday: '08:00',
-      tuesday: '08:00',
-      wednesday: '08:00',
-      thursday: '08:00',
-      friday: '08:00',
-    });
-    setName('');
+    if(res){
+      const employee = {
+        name,
+        timeArrived,
+        picture: res.results[0].picture,
+      };
+     
+      dispatch({
+        type: ADD_REPORT,
+        payload: employee,
+      });
+      setTimeArrived({
+        monday: '08:00',
+        tuesday: '08:00',
+        wednesday: '08:00',
+        thursday: '08:00',
+        friday: '08:00',
+      });
+      setName('');
+    }else{
+      alert("Network error, please try again")
+    }
+    
   };
 
   const handleGenerate = async () => {
