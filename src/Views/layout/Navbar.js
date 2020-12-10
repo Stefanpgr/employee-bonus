@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux"
+
 const Navbar = () => {
+    const genReports = useSelector((state) => state.genReports)
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light px-5">
   <a className="navbar-brand" href="/">Powernik</a>
@@ -8,7 +11,7 @@ const Navbar = () => {
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div className="navbar-nav">
       <a className="nav-item nav-link active" href="/">Create Report </a>
-      <a className="nav-item nav-link" href="/report">View Reports</a>
+      {genReports && <a className="nav-item nav-link" href="/report">View Reports</a>}
  
 
     </div>
