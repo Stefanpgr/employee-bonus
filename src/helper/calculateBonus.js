@@ -16,7 +16,7 @@ for(let i=0; i < data.length; i++){
                if(ms < 1){
                    continue
                } 
-            console.log(Math.floor(totalMinutes / 5), 'floored')
+            // console.log(Math.floor(totalMinutes / 5), 'floored')
             // Divides the total minutes  by 5 and returns non floating numbers eliminating minutes under 5minutes
                 bonus  = bonus + (Math.floor(totalMinutes / 5)) 
               
@@ -26,6 +26,6 @@ for(let i=0; i < data.length; i++){
         arr.push({...data[i], bonus})
 
 }
-console.log(arr)
+// console.log(arr)
 return arr
 }

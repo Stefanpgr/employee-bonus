@@ -25,14 +25,14 @@ const CreateReport = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ name, timeArrived });
+  
     const res = await getRandomImg();
     const employee = {
       name,
       timeArrived,
       picture: res.results[0].picture,
     };
-    console.log(employee);
+   
     dispatch({
       type: ADD_REPORT,
       payload: employee,
@@ -58,11 +58,11 @@ const CreateReport = () => {
 
   return (
     <div className="form-wrapper">
-     
+       <h2 className='company-name'>Powernik Nigeria Limited</h2>
 
-     
+       <p className='text-center'>Employee Bonus Report Generator</p>
       <div className="form-body">
-
+    
         <div className='wrapper'>
         <form
           className="card-container card-container_form"
