@@ -1,0 +1,46 @@
+.report-card{
+    .employee-container{
+        cursor: pointer;
+        padding: 1.5rem;
+    border-radius: 1rem;
+    background: #fff;
+    border: 1px solid #f1eeee;
+    transition: all .3s ease-in-out;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+    .employee-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .rounded-circle{
+        border-radius: 50%;
+    }
+    .employee-info{
+        flex: 1;
+        align-items: center;
+        display: flex;
+    -webkit-box-align: center;
+    }
+    
+    
+    .employee-container:hover {
+        border-color: transparent;
+        box-shadow: 0 2px 15px rgba(0,0,0,.07);
+    }
+   
+    .employee-type{
+        font-size: 1rem;
+        color:#9f9f9f !important;
+    }
+    .bonus{
+        color:#1dbf69 !important;
+        font-weight: bold;
+    }
+}
+
+
