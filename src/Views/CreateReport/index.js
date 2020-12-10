@@ -13,11 +13,11 @@ const CreateReport = () => {
   const reports = useSelector((state) => state.reports);
   const dispatch = useDispatch();
   const [timeArrived, setTimeArrived] = useState({
-    monday: '',
-    tuesday: '',
-    wednesday: '',
-    thursday: '',
-    friday: '',
+    monday: '08:00',
+    tuesday: '08:00',
+    wednesday: '08:00',
+    thursday: '08:00',
+    friday: '08:00',
   });
 
   const handleTime = ({ target }) => {
@@ -38,11 +38,11 @@ const CreateReport = () => {
       payload: employee,
     });
     setTimeArrived({
-      monday: '',
-      tuesday: '',
-      wednesday: '',
-      thursday: '',
-      friday: '',
+      monday: '08:00',
+      tuesday: '08:00',
+      wednesday: '08:00',
+      thursday: '08:00',
+      friday: '08:00',
     });
     setName('');
   };
@@ -91,6 +91,9 @@ const CreateReport = () => {
               id="text-input"
               type="time"
               onChange={handleTime}
+              min='06:00'
+              max='12:00'
+             
             />
           </div>
 
@@ -104,6 +107,8 @@ const CreateReport = () => {
               id="text-input"
               type="time"
               onChange={handleTime}
+              min='06:00'
+              max='12:00'
             />
           </div>
 
@@ -117,6 +122,8 @@ const CreateReport = () => {
               id="text-input"
               type="time"
               onChange={handleTime}
+              min='06:00'
+              max='12:00'
             />
           </div>
 
@@ -130,6 +137,8 @@ const CreateReport = () => {
               type="time"
               onChange={handleTime}
               value={timeArrived.thursday}
+              min='06:00'
+              max='12:00'
             />
           </div>
 
@@ -143,6 +152,8 @@ const CreateReport = () => {
               type="time"
               onChange={handleTime}
               value={timeArrived.friday}
+              min='06:00'
+              max='12:00'
             />
           </div>
 
