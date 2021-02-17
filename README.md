@@ -1,7 +1,7 @@
 # This Project generates  bonus for employees depending on how early they get to work throughout the week
 
 
-
+### [View Demo](https://employee-bonus.netlify.app)
 
 # Getting Started with Create React App
 
